@@ -1,119 +1,302 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Yu Fang</title>
-
-    <meta name="author" content="Yu Fang">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+    <title>Yu Fang</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Yu Fang
-                </p>
-                <p>Hi, I'm an Information Systems major at 
-                  <a href="https://www.cmu.edu/">Carnegie Mellon University</a>. 
-                  I’m fortunate to be advised by Dr. Amy Ogan and Dr. Shihong Huang.
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        .profile-info {
+            flex: 2;
+        }
+
+        .profile-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .profile-info p {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #444;
+            text-align: justify;
+        }
+
+        .research-interests {
+            font-size: 0.95rem;
+            color: #444;
+            margin-top: 15px;
+            text-align: justify;
+        }
+
+        .interests-list {
+            color: #B8860B;
+            font-weight: 500;
+        }
+
+        .profile-info a {
+            color: #B8860B;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .profile-info a:hover {
+            color: #8B6914;
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #B8860B;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact-links a:hover {
+            color: #000000;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #B8860B;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #B8860B;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .research-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .research-item:last-child {
+            border-bottom: none;
+        }
+
+        .research-image {
+            flex-shrink: 0;
+            width: 120px;
+            text-align: center;
+        }
+
+        .research-image img {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .research-details {
+            flex: 1;
+        }
+
+        .paper-header {
+            margin-bottom: 10px;
+        }
+
+        .paper-status {
+            display: inline-block;
+            background: #B8860B;
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .paper-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #000000;
+            text-decoration: none;
+            display: block;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .paper-title:hover {
+            color: #B8860B;
+        }
+
+        .authors {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .authors strong {
+            color: #000000;
+        }
+
+        .venue {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .research-item {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .research-image {
+                width: 100%;
+            }
+
+            .research-image img {
+                width: 120px;
+            }
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-info">
+                <h1 class="name">Yu Fang</h1>
+                <p>Hi, I'm an Information Systems major at
+                    <a href="https://www.cmu.edu/">Carnegie Mellon University</a>.
+                    I'm fortunate to be advised by Dr. Amy Ogan and Dr. Shihong Huang.
                 </p>
                 <p>
-                  Starting in Fall 2025, I'll be joining 
-                  <a href="https://www.vanderbilt.edu/">Vanderbilt University</a> 
-                  as a Computer Science PhD student and Research Assistant under 
-                  the guidance of Dr. Gautam Biswas.
+                    Starting in Fall 2025, I'll be joining
+                    <a href="https://www.vanderbilt.edu/">Vanderbilt University</a>
+                    as a Computer Science PhD student under
+                    the guidance of Dr. Gautam Biswas.
                 </p>
-                
-                <!-- <p>
-                  At Google I've worked on <a href="https://www.google.com/glass/start/">Glass</a>,  <a href="https://ai.googleblog.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://blog.google/products/google-ar-vr/introducing-next-generation-jump/">VR</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, <a href="https://ai.googleblog.com/2020/12/portrait-light-enhancing-portrait.html">Portrait Light</a>, and <a href="https://blog.google/products/maps/three-maps-updates-io-2022/">Maps</a>. I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a>. I've received the <a href="https://www.thecvf.com/?page_id=413#YRA">PAMI Young Researcher Award</a>.
-                </p> -->
-                <p style="text-align:center">
-                  <a href="mailto:lucia.yufang.1105@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="data/Lucia_resume_phd.pdf">CV</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://bsky.app/profile/jonbarron.bsky.social">Bluesky</a> &nbsp;/&nbsp; -->
-                  <a href="https://github.com/luciafang">Github</a>
-                </p>
-              </td>
-              
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/lucia.jpg">
-                  <img style="width:80%; aspect-ratio: 1/1; object-fit: cover; border-radius: 50px; margin-top:10px;" alt="profile photo" src="images/lucia.jpg" class="hoverZoomLink">
-                </a>
-              </td>
-              
-              
-              
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <!-- <p>
-                  I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields. Some papers are <span class="highlight">highlighted</span>.
-                </p> -->
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+<!--                <p class="research-interests">-->
+<!--                    My research interests include: <span class="interests-list">Human-Computer Interaction, Machine Learning in Education</span>-->
+<!--                </p>-->
 
-            <table style="border-collapse: collapse;">
-              <tr>
-                <td style="padding:8px;width:20%;vertical-align:middle">
-                  <img src="images/LAK25.jpg" width="100%">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://dl.acm.org/doi/10.1145/3706468.3706528">
-                    <span class="papertitle">
-                      A Cross-Cultural Confusion Model for Detecting and Evaluating Students’ Confusion In a Large Classroom
-                    </span>
-                  </a>
-                  <p style="margin:0;">
-                    <strong>Yu Fang</strong>, Shihong Huang, Amy Ogan
-                  </p>
-                  <p style="margin:0;">
-                    <em>LAK</em>, 2025
-                  </p>
-                </td>
-              </tr>
-            
-              <tr>
-                <td style="padding:8px;width:20%;vertical-align:middle">
-                  <img src="images/surg.jpg" width="100%">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://symposium.foragerone.com/meeting-of-the-minds-2024/presentations/62536">
-                    <span class="papertitle">
-                      Engaging or Zoning Out in Class: Automated Engagement Assessment with Unsupervised Clustering
-                    </span>
-                  </a>
-                  <p style="margin:0;">
-                    <strong>Yu Fang</strong>, Prasoon Patidar, Yuvraj Agarwal, John Zimmerman, Amy Ogan
-                  </p>
-                  <p style="margin:0;">
-                    <em>Presented at the Meeting of the Minds Undergraduate Research Symposium.</em>, 2024
-                  </p>
-                </td>
-              </tr>
-            </table>
-            
-            
+                <div class="contact-links">
+                    <a href="mailto:lucia.yufang.1105@gmail.com">Email</a> /
+                    <a href="data/Lucia_resume_phd.pdf">CV</a> /
+                    <a href="https://github.com/luciafang">Github</a>
+                </div>
+            </div>
 
+            <div class="profile-photo">
+                <img src="images/lucia.jpg" alt="Yu Fang" class="profile-image">
+            </div>
+        </div>
 
-    
-    </table>
-  </body>
+        <div class="content">
+            <h2 class="section-title">Research</h2>
+
+            <div class="research-item">
+                <div class="research-image">
+                    <img src="images/LAK25.jpg" alt="LAK 2025 paper">
+                </div>
+                <div class="research-details">
+                    <div class="paper-header">
+                        <span class="paper-status">Published</span>
+                    </div>
+                    <a href="https://dl.acm.org/doi/10.1145/3706468.3706528" class="paper-title">
+                        A Cross-Cultural Confusion Model for Detecting and Evaluating Students' Confusion In a Large Classroom
+                    </a>
+                    <div class="authors">
+                        <strong>Yu Fang</strong>, Shihong Huang, Amy Ogan
+                    </div>
+                    <div class="venue">
+                        The 15th International Learning Analytics and Knowledge Conference, 2025
+                    </div>
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="research-image">
+                    <img src="images/surg.jpg" alt="Meeting of Minds 2024">
+                </div>
+                <div class="research-details">
+                    <div class="paper-header">
+                        <span class="paper-status">Presented</span>
+                    </div>
+                    <a href="https://symposium.foragerone.com/meeting-of-the-minds-2024/presentations/62536" class="paper-title">
+                        Engaging or Zoning Out in Class: Automated Engagement Assessment with Unsupervised Clustering
+                    </a>
+                    <div class="authors">
+                        <strong>Yu Fang</strong>, Prasoon Patidar, Yuvraj Agarwal, John Zimmerman, Amy Ogan
+                    </div>
+                    <div class="venue">
+                        Presented at the Meeting of the Minds Undergraduate Research Symposium, 2024
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Last updated: June 2025 | Template inspired by <a href="https://github.com/jonbarron/jonbarron.github.io" style="color: #B8860B;">Jon Barron</a></p>
+        </div>
+    </div>
+</body>
 </html>
